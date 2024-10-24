@@ -1,0 +1,82 @@
+.button {
+    padding: 10px 10px;
+    border: none;
+    background-color: #6B705C;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: #A5A58D; /* Lightened version for hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #982B1C; /* Red */
+    margin-right: 10px;
+}
+
+.delete-button:hover {
+    background-color: #C5705D;
+}
+
+.filter-section{
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+/* Update Button */
+.update-button {
+    background-color: #405D72; /* Blue for update action */
+}
+
+.update-button:hover {
+    background-color: #758694;
+}
+
+/* Review Item Styles */
+.review-item {
+    background: #F4F1DE;
+    padding: 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    border-radius: 7px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stars {
+    display: inline-block;
+    color: #E0A75E; /* Gold color */
+    margin-top: 7px;
+}
+
+.review-buttons {
+    margin-top: 15px; /* space between stars and buttons */
+}
+
+.input-book-name,
+.input-series-name,
+.input-movie-name,
+.review-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6B705C;
+    border-radius: 6px;
+    font-family: sans-serif;
+}
+.description-bubble {
+    background: #F4F1DE; /* Beige-like background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    color: #6B705C; /* Soft earthy green */
+}

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+body {
+  background-color: #f9f4e8; /* Soft cream background */
+  font-family: 'Handlee', cursive;
+  color: #4a4a4a;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  background-color: #d9e4dd; /* Soft green */
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: #6b705c; /* Slightly darker green on hover */
+}
+
+main {
+  margin-top: 30px;
+  width: 80%;
+}
+
+.page-container {
+  background-color: #fff3e6; /* Soft pastel pink background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #6b705c; /* Muted green */
+  font-size: 2.5rem;
+}
+
+p {
+  color: #4a4a4a;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+/* New Project Info Bubble */
+.project-info-bubble {
+  background-color: #e7e4d8; /* Light cream with greenish tint */
+  border: 2px solid #d4cfc9; /* Soft border */
+  border-radius: 15px; /* Rounded corners for a cute look */
+  padding: 20px;
+  width: 60%;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-info-bubble h2 {
+  color: #6b705c;
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+.project-info-bubble p {
+  color: #4a4a4a;
+  font-size: 1.1rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #d9e4dd; /* Same soft green as header */
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
