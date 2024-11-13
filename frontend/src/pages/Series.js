@@ -1,9 +1,8 @@
 import React, {useState} from 'react'; // Import React and useState hook for managing state in the component
 import axios from 'axios'; // Import axios for making HTTP requests
-import Layout from './Layout'; // Import Layout component to maintain consistent page structure
 import './Commons.css';
 
-const Series = () => {
+const Series = ({isAdmin}) => {
     const [seriesName, setSeriesName] = useState('');
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(1);
@@ -98,7 +97,6 @@ const Series = () => {
     });
 
     return (
-        <Layout>
             <div className="series-page">
                 <div className="description-bubble">
                     <h2><span role="img" aria-label="movie-icon">🐉️</span> Series </h2>
@@ -136,6 +134,7 @@ const Series = () => {
                                 </div>
 
                                 {/* EDIT OR DELETE the review */}
+                                {isAdmin && (
                                 <div className="review-buttons">
                                     <button className="button delete-button"
                                             onClick={() => handleDeleteReview(r.id)}>Delete
@@ -143,12 +142,14 @@ const Series = () => {
                                     <button className="button update-button" onClick={() => handleEditReview(r)}>Edit
                                     </button>
                                 </div>
+                                )}
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Section to Add review */}
+                {isAdmin && (
                 <div className="add-review-section">
                     <h2>{editId ? 'Update Review' : 'Add a Review'}</h2>
                     <input
@@ -183,8 +184,8 @@ const Series = () => {
                         </button>
                     )}
                 </div>
+                )}
             </div>
-        </Layout>
     );
 };
 

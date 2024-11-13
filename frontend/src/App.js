@@ -1,27 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import React, {useState} from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Books from './pages/Books';
 import Movies from './pages/Movies';
 import Series from './pages/Series';
-import Thoughts from './pages/Thoughts';
+import About from "./pages/About";
 import './App.css';
-
-// Component for Project Info Bubble
-function ProjectInfoBubble() {
-  return (
-      <div className="project-info-bubble">
-        <h2>🌿 About this Project: Hiraeth Blog 🌿</h2>
-        <p>🌷 This website is coded using: </p>
-        <p>
-          JavaScript - React for its front-end,
-          Java - Spring for its back-end,
-          PostgreSQL for its database
-        </p>
-        <p>🌷 It is a blog where you can share your reviews on books, movies, series, and your thoughts.</p>
-        <p>🌷 Enjoy the cozy reviews and join the journey!</p>
-      </div>
-  );
-}
 
 // Component for Footer
 function Footer() {
@@ -33,29 +16,27 @@ function Footer() {
 }
 
 function App() {
-  const location = useLocation(); // Get current route
+    const [isAdmin, setIsAdmin] = useState(false); // Track admin status
 
   return (
       <div className="app-container">
         <header className="header">
           <nav className="nav-bar">
-            <Link to="/books">📚 Books</Link>
+              <Link to="/hiraeth">🌱 Homepage</Link>
+              <Link to="/books">📚 Books</Link>
             <Link to="/movies">🎥 Movies</Link>
             <Link to="/series">📺 Series</Link>
-            <Link to="/thoughts">💭 Thoughts</Link>
           </nav>
         </header>
 
-        {/* Render the ProjectInfoBubble only on the home route ("/") */}
-        {location.pathname === '/' && <ProjectInfoBubble />}
 
         <main>
-          <Routes>
-            <Route path="/books" element={<Books />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/series" element={<Series />} />
-            <Route path="/thoughts" element={<Thoughts />} />
-          </Routes>
+            <Routes>
+                <Route path="/hiraeth" element={<About setIsAdmin={setIsAdmin} />} /> {/* Pass setIsAdmin to About */}
+                <Route path="/books" element={<Books isAdmin={isAdmin}/>} />
+                <Route path="/movies" element={<Movies isAdmin={isAdmin} />} /> {/* Pass isAdmin to Movies */}
+                <Route path="/series" element={<Series isAdmin={isAdmin}/>} />
+            </Routes>
         </main>
 
         {/* Footer is displayed on every page */}

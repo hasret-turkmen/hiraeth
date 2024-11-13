@@ -13,6 +13,31 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  min-height: 100vh; /* Ensures app-container takes the full viewport height */
+
+}
+.blog-header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 10; /* Ensures it's on top of other elements */
+  text-align: left;
+  margin: 0 auto; /* Centers the info bubble */
+}
+
+.blog-header h1 {
+  font-size: 1.8rem;
+  color: #6B705C; /* Soft earthy green */
+  font-family: serif;
+  margin: 0;
+}
+
+.blog-header h3 {
+  font-size: 1rem;
+  color: #58457e; /* Light lavender for contrast */
+  font-family: serif;
+  font-style: italic;
+  margin: 0;
 }
 
 .header {
@@ -42,6 +67,8 @@ body {
 main {
   margin-top: 30px;
   width: 80%;
+  flex: 1; /* Expands to fill available space, pushing footer to the bottom */
+  padding-bottom: 60px; /* Extra padding to prevent overlap with footer */
 }
 
 .page-container {
@@ -63,42 +90,16 @@ p {
   line-height: 1.6;
 }
 
-/* New Project Info Bubble */
-.project-info-bubble {
-  background-color: #e7e4d8; /* Light cream with greenish tint */
-  border: 2px solid #d4cfc9; /* Soft border */
-  border-radius: 15px; /* Rounded corners for a cute look */
-  padding: 20px;
-  width: 60%;
-  text-align: center;
-  margin-bottom: 30px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.project-info-bubble h2 {
-  color: #6b705c;
-  font-size: 1.75rem;
-  margin-bottom: 10px;
-}
-
-.project-info-bubble p {
-  color: #4a4a4a;
-  font-size: 1.1rem;
-}
-
 /* Footer Styles */
 .footer {
   background-color: #d9e4dd; /* Same soft green as header */
   padding: 10px;
   text-align: center;
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  margin-top: auto; /* Pushes footer to the bottom */
 }
 
 .footer p {
-  margin: 0;
   font-size: 1rem;
   color: #4a4a4a;
 }

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'; // Import React and useState hook for managing state in the component
 import axios from 'axios'; // Import axios for making HTTP requests
-import Layout from './Layout'; // Import Layout component to maintain consistent page structure
-import './Commons.css'; // Import CSS for styling the Books component
+import './Commons.css';
 
-const Books = () => {
+const Books = ({ isAdmin }) => {
     // State hooks for storing form inputs, reviews list, and edit status
     const [bookName, setBookName] = useState(''); // Stores the book name
     const [review, setReview] = useState(''); // Stores the review text
@@ -96,7 +95,6 @@ const Books = () => {
     });
 
     return (
-        <Layout> {/* Layout component to maintain consistent page layout */}
             <div className="books-page">
                 <div className="description-bubble">
                     <h2><span role="img" aria-label="book-icon">📚</span> Books </h2>
@@ -134,16 +132,19 @@ const Books = () => {
                                     {'☆'.repeat(5 - r.rating)} {/* Display unfilled stars based on rating */}
                                 </div>
                                 {/* Buttons to edit or delete review */}
+                                {isAdmin && (
                                 <div className="review-buttons">
                                     <button className="button delete-button" onClick={() => handleDeleteReview(r.id)}>Delete</button> {/* Delete button */}
                                     <button className="button update-button" onClick={() => handleEditReview(r)}>Edit</button> {/* Edit button */}
                                 </div>
+                                )}
                             </div>
                         ))}
                     </div>
                 </div>
 
                 {/* Section to Add or Update a Review */}
+                {isAdmin && (
                 <div className="add-review-section">
                     <h2>{editId ? 'Update Review' : 'Add a Review'}</h2> {/* Title changes based on edit or add mode */}
                     <input
@@ -178,8 +179,8 @@ const Books = () => {
                         </button>
                     )}
                 </div>
+                )}
             </div>
-        </Layout>
     );
 };
 
