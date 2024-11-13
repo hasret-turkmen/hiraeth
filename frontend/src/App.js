@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Link, Navigate, Route, Routes} from 'react-router-dom';
 import Books from './pages/Books';
 import Movies from './pages/Movies';
 import Series from './pages/Series';
@@ -32,6 +32,7 @@ function App() {
 
         <main>
             <Routes>
+                <Route path="/" element={<Navigate to="/hiraeth" replace />} />
                 <Route path="/hiraeth" element={<About setIsAdmin={setIsAdmin} />} /> {/* Pass setIsAdmin to About */}
                 <Route path="/books" element={<Books isAdmin={isAdmin}/>} />
                 <Route path="/movies" element={<Movies isAdmin={isAdmin} />} /> {/* Pass isAdmin to Movies */}
