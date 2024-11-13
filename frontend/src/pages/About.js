@@ -8,7 +8,8 @@ const About = ({ setIsAdmin }) => {
     const [inputPassword, setInputPassword] = useState('');
     const [message, setMessage] = useState("You need the magic password to add/delete reviews. If you don't know it, you can only check my reviews!");
 
-    const magicPassword = 'altinciparsomen';
+    const magicPassword = process.env.REACT_APP_MAGIC_PASSWORD;
+
 
     const handleYesClick = () => {
         setPasswordStep(1);
@@ -28,7 +29,8 @@ const About = ({ setIsAdmin }) => {
         } else {
             if (passwordStep === 1) {
                 setPasswordStep(2);
-                setMessage("Wrong password! You have one more chance.");
+                setMessage("Wrong password. You have one more chance")
+                console.log("Correct password is:", magicPassword)
             } else {
                 setPasswordStep(3);
                 setMessage("Sorry! If you want to add a review, feel free to reach out! You can browse other reviews in the meantime.");
