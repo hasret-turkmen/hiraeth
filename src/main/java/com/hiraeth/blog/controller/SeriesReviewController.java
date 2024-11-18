@@ -21,11 +21,14 @@ public class SeriesReviewController {
         this.seriesReviewService = seriesReviewService;
     }
 
+    //returns all reviews
+    //local testing endpoint with postman: GET http://localhost:8080/api/series
     @GetMapping
     public List<SeriesReview> getAllReviews() {
         return seriesReviewService.getAllReviews();
     }
 
+    //local testing endpoint with postman: GET http://localhost:8080/api/series/5
     @GetMapping("/{id}")
     public ResponseEntity<SeriesReview> getReviewById(@PathVariable Long id) {
         return seriesReviewService.getReviewById(id)
@@ -33,6 +36,13 @@ public class SeriesReviewController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    //local testing endpoint with postman: POST http://localhost:8080/api/series
+    /*
+    body: {
+        "seriesName": "Game Of Thrones",
+        "review": "The final was bad!",
+        "rating": 3 }
+    */
     @PostMapping
     public ResponseEntity<SeriesReview> createReview(@RequestBody SeriesReviewRequest seriesReviewRequest) {
         SeriesReview seriesReview = new SeriesReview();
@@ -44,6 +54,13 @@ public class SeriesReviewController {
         return ResponseEntity.ok(seriesReviewService.addReview(seriesReview));
     }
 
+    //local testing endpoint with postman: PUT http://localhost:8080/api/series/5
+    /*
+    body: {
+        "seriesName": "Game Of Thrones",
+        "review": "The final was bad!",
+        "rating": 3 }
+    */
     @PutMapping("/{id}")
     public ResponseEntity<SeriesReview> updateReview(@PathVariable Long id, @RequestBody SeriesReviewRequest review) {
         SeriesReview seriesReview = new SeriesReview();
@@ -54,6 +71,7 @@ public class SeriesReviewController {
         return ResponseEntity.ok(seriesReviewService.updateReview(id, seriesReview));
     }
 
+    //local testing endpoint with postman: DELETE http://localhost:8080/api/series/{id}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteReview(@PathVariable Long id) {
         seriesReviewService.deleteReview(id);

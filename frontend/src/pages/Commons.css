@@ -1,5 +1,6 @@
+/* see reviews button */
 .button {
-    padding: 10px 10px;
+    padding: 20px;
     border: none;
     background-color: #6B705C;
     color: white;
@@ -12,13 +13,23 @@
 }
 
 .button:hover {
-    background-color: #A5A58D; /* Lightened version for hover */
+    background-color: #A5A58D;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.description-bubble {
+    background: #F4F1DE;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+    color: #6B705C;
 }
 
 /* Delete Button */
 .delete-button {
-    background-color: #982B1C; /* Red */
+    background-color: #8c2415;
     margin-right: 10px;
 }
 
@@ -28,19 +39,19 @@
 
 .filter-section{
     padding-top: 10px;
+    margin-top: 5px;
     font-weight: bold;
 }
 
 /* Update Button */
 .update-button {
-    background-color: #405D72; /* Blue for update action */
+    background-color: #405D72;
 }
 
 .update-button:hover {
     background-color: #758694;
 }
 
-/* Review Item Styles */
 .review-item {
     background: #F4F1DE;
     padding: 15px;
@@ -52,8 +63,8 @@
 
 .stars {
     display: inline-block;
-    color: #E0A75E; /* Gold color */
-    margin-top: 7px;
+    color: #ce8425;
+    margin-top: 4px;
 }
 
 .review-buttons {
@@ -71,13 +82,6 @@
     border-radius: 6px;
     font-family: sans-serif;
 }
-.description-bubble {
-    background: #F4F1DE; /* Beige-like background */
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: sans-serif;
-    color: #6B705C; /* Soft earthy green */
-}
+
+
 

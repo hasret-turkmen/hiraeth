@@ -1,8 +1,6 @@
-// src/components/Header.js
-
 import React from 'react';
-import './Header.css';
 
+//only for the homepage.
 const Header = () => {
     return (
         <div className="blog-header">

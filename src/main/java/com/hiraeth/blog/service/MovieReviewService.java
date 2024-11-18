@@ -1,7 +1,6 @@
 package com.hiraeth.blog.service;
 
 import com.hiraeth.blog.model.MovieReview;
-import com.hiraeth.blog.repository.BookReviewRepository;
 import com.hiraeth.blog.repository.MovieReviewRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

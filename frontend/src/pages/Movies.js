@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Commons.css';
 
-const Movies = ({ isAdmin }) => { // Receive isAdmin as a prop
+const Movies = ({ isAdmin }) => {
     const [movieName, setMovieName] = useState('');
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(1);
@@ -43,7 +43,7 @@ const Movies = ({ isAdmin }) => { // Receive isAdmin as a prop
     const handleDeleteReview = (id) => {
         axios.delete(`http://localhost:8080/api/movies/${id}`)
             .then(() =>{
-                console.log('Review deleted:', id); // Log successful deletion
+                console.log('Review deleted:', id);
                 handleFetchReviews()
             })
             .catch((error) => console.error('Error deleting movie review:', error));
@@ -73,7 +73,7 @@ const Movies = ({ isAdmin }) => { // Receive isAdmin as a prop
         <div className="movies-page">
             <div className="description-bubble">
                 <h2><span role="img" aria-label="movie-icon">🎥</span> Movies</h2>
-                <p>My harsh (but not so impactful) movie reviews. I can guarantee 5-star movies are objectively good tho!</p>
+                <p>My harsh (but not so impactful) movie reviews. I can guarantee 5-star movies are objectively good tho! 🍿🎥⋆⭒˚.⋆📺❀˖°🎞⋆⭒˚.⋆️🎬⋆༺𓆩☠︎︎𓆪༻⋆</p>
             </div>
             <div className="reviews-section">
                 <h2>Reviews</h2>

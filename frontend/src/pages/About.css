@@ -1,49 +1,24 @@
-
-/*!* New Project Info Bubble *!*/
-/*.project-info-bubble {*/
-/*    background-color: #e7e4d8; !* Light cream with greenish tint *!*/
-/*    border: 2px solid #d4cfc9; !* Soft border *!*/
-/*    border-radius: 15px; !* Rounded corners for a cute look *!*/
-/*    padding: 20px;*/
-/*    width: 60%;*/
-/*    text-align: center;*/
-/*    max-width: fit-content;*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*    margin-top: auto;*/
-/*    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);*/
-/*}*/
-
-/*.project-info-bubble h2 {*/
-/*    color: #6b705c;*/
-/*    font-size: 1.75rem;*/
-/*    margin-bottom: 10px;*/
-/*}*/
-
-/*.project-info-bubble p {*/
-/*    color: #4a4a4a;*/
-/*    font-size: 1.1rem;*/
-/*}*/
 .about-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adds space between the bubbles */
-    padding: 20px;
+    gap: 20px;
 }
 
+/* About this Project... */
 .project-info-bubble {
     background-color: #e7e4d8;
     border: 2px solid #d4cfc9;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 20px;
     width: 60%;
     text-align: center;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* You need the magic password... */
 .password-prompt-bubble {
-    background-color: #f4f1de; /* Light yellow for a different look */
+    background-color: #f4f1de;
     border: 2px solid #d4cfc9;
     border-radius: 15px;
     padding: 20px;
@@ -52,15 +27,16 @@
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* yes and no */
 .password-prompt-bubble button {
-    margin: 5px;
+    margin: 10px;
     padding: 8px 12px;
     background-color: #6b705c;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* to make it lighter when hovered */
 }
 
 .password-prompt-bubble button:hover {

@@ -10,15 +10,16 @@ const About = ({ setIsAdmin }) => {
 
     const magicPassword = process.env.REACT_APP_MAGIC_PASSWORD;
 
-
+    //when clicked "yes" on the password bubble
     const handleYesClick = () => {
         setPasswordStep(1);
-        setMessage("Please enter the magic password:");
+        setMessage("Please enter the magic password 🧙🏻‍♀️🔮🪄:");
     };
 
+    //when clicked "no" on the password bubble
     const handleNoClick = () => {
         setShowPrompt(false);
-        setMessage("Have fun browsing the reviews!");
+        setMessage("Have fun browsing the reviews! 🌸˚˖𓍢ִ໋🌷͙֒✧🩷˚⋆️");
     };
 
     const handlePasswordSubmit = () => {
@@ -30,10 +31,9 @@ const About = ({ setIsAdmin }) => {
             if (passwordStep === 1) {
                 setPasswordStep(2);
                 setMessage("Wrong password. You have one more chance")
-                console.log("Correct password is:", magicPassword)
             } else {
                 setPasswordStep(3);
-                setMessage("Sorry! If you want to add a review, feel free to reach out! You can browse other reviews in the meantime.");
+                setMessage("Sorry! If you want to add a review, reach out to me! You can browse other reviews in the meantime.");
             }
         }
         setInputPassword('');
@@ -45,8 +45,8 @@ const About = ({ setIsAdmin }) => {
             <div className="project-info-bubble">
                 <h2>🌿 About this Project: Hasret's Hiraeth Blog 🌿</h2>
                 <p>🌷 This website is coded using:</p>
-                <p>JavaScript - React for its front-end, Java - Spring for its back-end, PostgreSQL for its database</p>
-                <p>🌷 It is a blog where you can see my views on books, movies, series, and your thoughts.</p>
+                <p>JavaScript (React) for its frontend, Java (SpringBoot) for its backend, PostgreSQL for its database</p>
+                <p>🌷 It is a blog where you can see my views on books, movies, and series.</p>
                 <p>🌷 Enjoy the cozy reviews and join the journey!</p>
             </div>
 

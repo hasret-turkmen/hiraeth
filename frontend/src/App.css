@@ -1,47 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 body {
-  background-color: #f9f4e8; /* Soft cream background */
+  background-color: #f9f4e8;
   font-family: 'Handlee', cursive;
   color: #4a4a4a;
-  margin: 0;
-  padding: 0;
 }
 
+/*navbar and header*/
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  min-height: 100vh; /* Ensures app-container takes the full viewport height */
-
+  min-height: 100vh;
 }
+
 .blog-header {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 10; /* Ensures it's on top of other elements */
+  z-index: 10;
   text-align: left;
-  margin: 0 auto; /* Centers the info bubble */
 }
 
 .blog-header h1 {
   font-size: 1.8rem;
-  color: #6B705C; /* Soft earthy green */
+  color: #6B705C;
   font-family: serif;
   margin: 0;
 }
 
 .blog-header h3 {
   font-size: 1rem;
-  color: #58457e; /* Light lavender for contrast */
+  color: #58457e;
   font-family: serif;
   font-style: italic;
   margin: 0;
 }
 
 .header {
-  background-color: #d9e4dd; /* Soft green */
+  background-color: #d9e4dd;
   padding: 15px;
   width: 100%;
   text-align: center;
@@ -61,27 +59,14 @@ body {
 }
 
 .nav-bar a:hover {
-  color: #6b705c; /* Slightly darker green on hover */
+  color: #6b705c;
 }
 
 main {
   margin-top: 30px;
   width: 80%;
-  flex: 1; /* Expands to fill available space, pushing footer to the bottom */
+  flex: 1;
   padding-bottom: 60px; /* Extra padding to prevent overlap with footer */
-}
-
-.page-container {
-  background-color: #fff3e6; /* Soft pastel pink background */
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-h1 {
-  color: #6b705c; /* Muted green */
-  font-size: 2.5rem;
 }
 
 p {
@@ -90,9 +75,8 @@ p {
   line-height: 1.6;
 }
 
-/* Footer Styles */
 .footer {
-  background-color: #d9e4dd; /* Same soft green as header */
+  background-color: #d9e4dd;
   padding: 10px;
   text-align: center;
   width: 100%;
@@ -100,6 +84,6 @@ p {
 }
 
 .footer p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #4a4a4a;
 }

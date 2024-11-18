@@ -16,6 +16,7 @@ public class SeriesReviewService {
     public SeriesReviewService(SeriesReviewRepository seriesReviewRepository) {
         this.seriesReviewRepository = seriesReviewRepository;
     }
+
     public List<SeriesReview> getAllReviews() {
         return seriesReviewRepository.findAll();
     }

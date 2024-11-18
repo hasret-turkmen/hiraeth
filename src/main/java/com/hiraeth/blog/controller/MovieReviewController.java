@@ -20,11 +20,14 @@ public class MovieReviewController {
         this.movieReviewService = movieReviewService;
     }
 
+    //returns all reviews
+    //local testing endpoint with postman: GET http://localhost:8080/api/movies
     @GetMapping
     public List<MovieReview> getAllReviews() {
         return movieReviewService.getAllReviews();
     }
 
+    //local testing endpoint with postman: GET http://localhost:8080/api/movies/3
     @GetMapping("/{id}")
     public ResponseEntity<MovieReview> getReviewById(@PathVariable Long id) {
         return movieReviewService.getReviewById(id)
@@ -32,6 +35,13 @@ public class MovieReviewController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    //local testing endpoint with postman: POST http://localhost:8080/api/movies
+    /*
+    body: {
+        "movieName": "The Substance",
+        "review": "My favorite movie! Amazing!",
+        "rating": 5 }
+    */
     @PostMapping
     public ResponseEntity<MovieReview> createReview(@RequestBody MovieReviewRequest movieReviewRequest) {
         MovieReview movieReview = new MovieReview();
@@ -43,6 +53,13 @@ public class MovieReviewController {
         return ResponseEntity.ok(movieReviewService.addReview(movieReview));
     }
 
+    //local testing endpoint with postman: PUT http://localhost:8080/api/movies
+    /*
+    body: {
+        "movieName": "The Substance",
+        "review": "My favorite movie! Amazing!",
+        "rating": 5 }
+    */
     @PutMapping("/{id}")
     public ResponseEntity<MovieReview> updateReview(@PathVariable Long id, @RequestBody MovieReviewRequest movieReviewRequest) {
         MovieReview updatedReview = new MovieReview();
@@ -54,6 +71,7 @@ public class MovieReviewController {
         return ResponseEntity.ok(movieReviewService.updateReview(id, updatedReview));
     }
 
+    //local testing endpoint with postman: DELETE http://localhost:8080/api/movies/{id}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteReview(@PathVariable Long id) {
         movieReviewService.deleteReview(id);

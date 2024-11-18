@@ -1,17 +1,17 @@
-# Use the official OpenJDK 17 as a base image
+# it creates a base image. i used openjdk 17.
 FROM openjdk:17-jdk-slim
 
-# Set the working directory inside the Docker container
+# create directory inside the Docker container
 WORKDIR /app
 
-# Copy the build artifact (jar file) from the Gradle build output directory
+# create output directory (copy the build artifact -jar file)
 COPY build/libs/*.jar app.jar
 
 # Set environment variable for proper encoding
 ENV LANG C.UTF-8
 
-# Expose the port the application runs on
+# expose the port for the app to run on
 EXPOSE 8080
 
-# Run the jar file
+# run the jar file
 ENTRYPOINT ["java", "-jar", "app.jar"]

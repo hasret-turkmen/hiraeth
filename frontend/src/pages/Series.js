@@ -1,5 +1,5 @@
-import React, {useState} from 'react'; // Import React and useState hook for managing state in the component
-import axios from 'axios'; // Import axios for making HTTP requests
+import React, {useState} from 'react'; //useState hook for managing state in the component
+import axios from 'axios'; //axios for making HTTP requests
 import './Commons.css';
 
 const Series = ({isAdmin}) => {
@@ -24,14 +24,14 @@ const Series = ({isAdmin}) => {
     // POST /series or PUT /series/:id - Add or update a review
     const handleAddOrUpdateReview = () => {
         const newReview = {
-            // Create a new review object with the input data
+            //Create a new review object with the input data
             seriesName,
             review,
             rating,
         };
 
         if (editId) {
-            // if id already exists, Update existing review
+            //if id already exists, Update existing review
             axios.put(`http://localhost:8080/api/series/${editId}`, newReview)
                 .then(() => {
                     console.log('Series review updated:', editId);
@@ -104,7 +104,6 @@ const Series = ({isAdmin}) => {
                     </p>
                 </div>
 
-                {/* Review SECTION */}
                 <div className="reviews-section">
                     <h2>Reviews</h2>
                     <button className="button" onClick={handleFetchReviews}>See Reviews</button>
@@ -180,7 +179,7 @@ const Series = ({isAdmin}) => {
                     </button>
                     {editId && (
                         <button className="button cancel-button" onClick={handleResetForm}>
-                            Cancel {/* Button to cancel editing */}
+                            Cancel
                         </button>
                     )}
                 </div>
